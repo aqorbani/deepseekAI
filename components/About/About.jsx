@@ -7,7 +7,7 @@ export default function About() {
     <div className="w-full h-screen flex flex-col justify-center items-center p-2">
       <div className="w-full flex flex-col justify-center items-center text-center">
         <h2 className="logo">PANA</h2>
-        <h2 className="text-[3vw] font-bold">Hi, wellcome my friend.</h2>
+        <h2 className="text-[3vw] font-bold">Hi, welcome my friend.</h2>
         <p className="text-[2vw] md:text-[1.1vw] font-medium">
           This website is created for you to use artificial intelligence
           knowledge easily. In the following, we will explain the features of
