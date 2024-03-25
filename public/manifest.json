@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Artificial intelligence assistant",
+  "short_name": "AIA",
+  "version": "0.0.1",
+  "description": "Artificial intelligence assistant for translate and content creator By Amir hossein",
+  "icons": {
+    "16": "/icons/logo.png",
+    "32": "/icons/logo.png",
+    "48": "/icons/logo.png",
+    "192": "/icons/logo.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["index.html"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["inject.js"]
+    }
+  ],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["sidePanel"],
+  "side_panel": {
+    "default_path": "index.html"
+  }
+}
