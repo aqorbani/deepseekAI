@@ -1,5 +1,4 @@
-import styles from "../../styles/Pages.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsTranslate } from "react-icons/bs";
 import { GrContactInfo } from "react-icons/gr";
 import Translate from "../Translate/Translate";
@@ -11,6 +10,7 @@ import Question from "../Question/Question";
 import About from "../About/About";
 import { TbMessageQuestion } from "react-icons/tb";
 import { HiPencilAlt } from "react-icons/hi";
+import { useRouter } from "next/router";
 
 export default function Index({ navigateToPage }) {
   // The Place To Define Variables and States
@@ -59,7 +59,7 @@ export default function Index({ navigateToPage }) {
         </div>
         {/* __________________________________________________________ SIDEBAR SECTION */}
         <div className="sm:w-28 md:w-52 lg:w-96 min-w-28 bg-gray-400 rounded-r-md overflow-hidden z-50">
-          <div className="mb-14 flex justify-center mt-7 md:mt-1">
+          <div className="mb-8 flex justify-center mt-7 md:mt-1">
             <h2
               className={`logo-sideBar ${
                 btnStatus != "about" ? "text-white" : "text-white"

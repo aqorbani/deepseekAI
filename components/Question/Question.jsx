@@ -52,7 +52,7 @@ export default function Question({ setLoader }) {
         <div className="w-full ">
           <div className="w-full">
             {/* ________________________________________________________ GET INPUT SECTION */}
-            <p className="text-black w-fit p-2 text-xs font-normal">
+            <p className="text-black w-fit p-2 text-[2.2vw] md:text-[1vw] font-medium">
               Please write your question :
             </p>
 
@@ -60,7 +60,7 @@ export default function Question({ setLoader }) {
               <div className="flex w-full">
                 <textarea
                   name="write"
-                  placeholder="Enter Text"
+                  placeholder="Enter Question"
                   className={`m-0 p-2 rounded textarea-c`}
                   value={text}
                   onChange={(e) => setText(e.target.value)}
@@ -86,6 +86,9 @@ export default function Question({ setLoader }) {
               <Button title="Get Answer" functionHandler={getAnswerHandler} />
             </div>
             {/* _____________________________________________________________ SHOW INPUT SECTION */}
+            <p className="text-black w-fit p-2 text-[2.2vw] md:text-[1vw] font-medium">
+              Answer :
+            </p>
             <div className="flex w-full justify-center items-center m-4">
               <div className="flex w-full">
                 <textarea

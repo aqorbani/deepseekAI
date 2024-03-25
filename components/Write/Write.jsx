@@ -69,8 +69,8 @@ export default function Main({ setLoader }) {
         <div className="w-full ">
           <div className="w-full">
             {/* ________________________________________________________ GET INPUT SECTION */}
-            <p className="text-black w-fit p-2 text-xs font-normal">
-              Write about :
+            <p className="text-black w-fit p-2 text-[2.2vw] md:text-[1vw] font-medium">
+              Please write your text :
             </p>
 
             <div className="flex w-full justify-center items-center m-4">
@@ -171,6 +171,9 @@ export default function Main({ setLoader }) {
               <Button title="Generate" functionHandler={generateHandler} />
             </div>
             {/* _____________________________________________________________ SHOW INPUT SECTION */}
+            <p className="text-black w-fit p-2 text-[2.2vw] md:text-[1vw] font-medium">
+              Response :
+            </p>
             <div className="flex w-full justify-center items-center m-4">
               <div className="flex w-full">
                 <textarea
