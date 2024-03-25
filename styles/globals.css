@@ -187,4 +187,7 @@ a {
   .logo::before {
     @apply content-['PANA'] absolute text-black border-r-2 border-black top-0 left-0 w-0 h-[100%] overflow-hidden animate-animateLogo;
   }
+  .textarea-c {
+    @apply bg-[#eeeeee80] w-[95%] h-28 resize-none font-medium text-base shadow-xl;
+  }
 }

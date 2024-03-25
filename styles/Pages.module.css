@@ -38,12 +38,3 @@
   font: small Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
-
-.textarea {
-  background-color: rgb(243, 243, 243);
-  width: 95%;
-  height: 100px;
-  resize: none;
-  font-size: small;
-  font-weight: normal;
-}

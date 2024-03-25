@@ -238,7 +238,7 @@ export default function Main({ setLoader }) {
                 <textarea
                   name="text"
                   placeholder="Enter Text"
-                  className={`m-0 p-2 rounded ${styles.textarea}`}
+                  className={`m-0 p-2 rounded textarea-c`}
                   value={text}
                   onChange={(e) => onChangeHandler(e)}
                 ></textarea>
@@ -289,7 +289,7 @@ export default function Main({ setLoader }) {
             <div className="flex w-full justify-center items-center m-4">
               <div className="flex w-full">
                 <textarea
-                  className={`m-0 p-2 rounded ${styles.textarea}`}
+                  className={`m-0 p-2 rounded textarea-c`}
                   value={response}
                   rows="20"
                   dir="rtl"

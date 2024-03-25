@@ -78,7 +78,7 @@ export default function Main({ setLoader }) {
                 <textarea
                   name="write"
                   placeholder="Enter Text"
-                  className={`m-0 p-2 rounded ${styles.textarea}`}
+                  className={`m-0 p-2 rounded textarea-c`}
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                   rows="20"
@@ -181,7 +181,7 @@ export default function Main({ setLoader }) {
                 <textarea
                   name="response"
                   value={response}
-                  className={`m-0 p-2 rounded ${styles.textarea}`}
+                  className={`m-0 p-2 rounded textarea-c`}
                   rows="20"
                   readOnly
                 ></textarea>
