@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BsTranslate } from "react-icons/bs";
 import { GrContactInfo } from "react-icons/gr";
 import Translate from "../Translate/Translate";
@@ -13,6 +13,9 @@ import { HiPencilAlt } from "react-icons/hi";
 import { useRouter } from "next/router";
 
 export default function Index({ navigateToPage }) {
+  const router = useRouter();
+  const ref = useRef(0);
+
   // The Place To Define Variables and States
   const [loader, setLoader] = useState(false);
   const [btnStatus, setBtnStatus] = useState("about");
@@ -20,6 +23,18 @@ export default function Index({ navigateToPage }) {
     "flex flex-col justify-center items-center w-full pt-3 p-2 bg-white text-gray-900 transition-all hover:delay-50 rounded-r-3xl";
   const disable =
     "flex flex-col text-gray-300 justify-center items-center w-full pt-3 p-2";
+
+  useEffect(() => {
+    if (
+      router.query.text &&
+      router.query.ori &&
+      router.query.des &&
+      ref.current === 0
+    ) {
+      setBtnStatus("translate");
+      ref.current = ref.current + 1;
+    }
+  });
 
   const switchComponents = (btnStatus) => {
     switch (btnStatus) {
