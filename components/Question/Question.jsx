@@ -83,12 +83,6 @@ export default function Question({ setLoader }) {
 
             {/* ________________________________________________________ GENERATE BUTTON SECTION */}
             <div className="flex justify-center w-ull m-2">
-              {/* <button
-                onClick={generateHandler}
-                className="w-full bg-black text-white font-semibold rounded-full p-1"
-              >
-                send
-              </button> */}
               <Button title="Get Answer" functionHandler={getAnswerHandler} />
             </div>
             {/* _____________________________________________________________ SHOW INPUT SECTION */}
