@@ -1,5 +1,6 @@
-import { BsFillQuestionSquareFill, BsTranslate } from "react-icons/bs";
-import { FaSquarePen } from "react-icons/fa6";
+import { BsTranslate } from "react-icons/bs";
+import { HiPencilAlt } from "react-icons/hi";
+import { TbMessageQuestion } from "react-icons/tb";
 
 export default function About() {
   return (
@@ -13,38 +14,36 @@ export default function About() {
         </p>
       </div>
       <div className="flex mt-5">
-        <div className="text-[7vw] font-bold mr-5 text-green-800">
-          <BsFillQuestionSquareFill />
+        <div className="text-[7vw] font-bold mr-5 text-orange-600">
+          <TbMessageQuestion />
         </div>
         <div className="flex flex-col justify-around">
           <h2 className="text-[2vw] font-semibold">Question</h2>
           <p>
-            You can ask this artificial intelligence any question about any
-            topic and see the answer.
+            You can ask this AI any question about any topic and see the answer.
           </p>
         </div>
       </div>
       <div className="flex mt-5">
-        <div className="text-[7vw] font-bold mr-5 text-purple-800">
+        <div className="text-[7vw] font-bold mr-5 text-violet-600">
           <BsTranslate />
         </div>
         <div className="flex flex-col justify-around">
-          <h2 className="text-[2vw] font-semibold">Question</h2>
+          <h2 className="text-[2vw] font-semibold">Translate</h2>
           <p>
-            You can ask this artificial intelligence any question about any
-            topic and see the answer.
+            You can easily translate the desired text by AI and use it anywhere
           </p>
         </div>
       </div>
       <div className="flex mt-5">
-        <div className="text-[7vw] font-bold mr-5 text-blue-800">
-          <FaSquarePen />
+        <div className="text-[7vw] font-bold mr-5 text-lime-600">
+          <HiPencilAlt />
         </div>
         <div className="flex flex-col justify-around">
-          <h2 className="text-[2vw] font-semibold">Question</h2>
+          <h2 className="text-[2vw] font-semibold">Write</h2>
           <p>
-            You can ask this artificial intelligence any question about any
-            topic and see the answer.
+            You can generate the text you want. Just give a brief description of
+            the desired text and AI will generate it for you.
           </p>
         </div>
       </div>
