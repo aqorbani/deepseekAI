@@ -200,10 +200,6 @@ export default function Main({ setLoader }) {
 
   return (
     <div className="flex flex-col">
-      {/* ________________________________________________________ TITLE SECTION */}
-      <h2 className="w-full z-20 bg-gray-400 text-white  p-5 text-2xl font-extrabold rounded-l-3xl ml-1">
-        Translate
-      </h2>
       <div className="flex p-3">
         <div className="w-full">
           <div className="w-full">
