@@ -59,8 +59,14 @@ export default function Index({ navigateToPage }) {
         </div>
         {/* __________________________________________________________ SIDEBAR SECTION */}
         <div className="sm:w-28 md:w-52 lg:w-96 min-w-28 bg-gray-400 rounded-r-md overflow-hidden z-50">
-          <div className="mb-14 flex justify-center">
-            <h2 className="logo">PANDA</h2>
+          <div className="mb-14 flex justify-center mt-7 md:mt-1">
+            <h2
+              className={`logo-sideBar ${
+                btnStatus != "about" ? "text-white" : "text-white"
+              }`}
+            >
+              PANA
+            </h2>
           </div>
           <button
             onClick={() => setBtnStatus("about")}
