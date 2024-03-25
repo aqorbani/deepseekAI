@@ -1,9 +1,7 @@
 import styles from "../../styles/Pages.module.css";
 import { useState } from "react";
 import { BsTranslate } from "react-icons/bs";
-import { FaSquarePen } from "react-icons/fa6";
 import { GrContactInfo } from "react-icons/gr";
-import { BsFillQuestionSquareFill } from "react-icons/bs";
 import Translate from "../Translate/Translate";
 import Write from "../Write/Write";
 import Lottie from "lottie-react";
@@ -11,6 +9,8 @@ import normal from "../../public/lottie/normal.json";
 import loading from "../../public/lottie/loading.json";
 import Question from "../Question/Question";
 import About from "../About/About";
+import { TbMessageQuestion } from "react-icons/tb";
+import { HiPencilAlt } from "react-icons/hi";
 
 export default function Index({ navigateToPage }) {
   // The Place To Define Variables and States
@@ -73,7 +73,7 @@ export default function Index({ navigateToPage }) {
             onClick={() => setBtnStatus("question")}
             className={btnStatus === "question" ? active : disable}
           >
-            <BsFillQuestionSquareFill className="text-[3vw] lg:text-[1.5vw]" />
+            <TbMessageQuestion className="text-[3vw] lg:text-[1.5vw]" />
             <p className="font-semibold text-[2vw] lg:text-[1vw]">Question</p>
           </button>
           <button
@@ -87,7 +87,7 @@ export default function Index({ navigateToPage }) {
             onClick={() => setBtnStatus("write")}
             className={btnStatus === "write" ? active : disable}
           >
-            <FaSquarePen className="text-[3vw] lg:text-[1.5vw]" />
+            <HiPencilAlt className="text-[3vw] lg:text-[1.5vw]" />
             <p className="font-semibold text-[2vw] lg:text-[1vw]">Write</p>
           </button>
 
