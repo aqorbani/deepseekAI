@@ -83,7 +83,7 @@ a {
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(185, 185, 185, 0.324);
+  background: rgba(200, 200, 200, 0.174);
   animation: animate 20s linear infinite;
   bottom: -150px;
 }

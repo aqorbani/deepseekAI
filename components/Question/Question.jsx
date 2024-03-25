@@ -4,6 +4,8 @@ import { GoCopy } from "react-icons/go";
 import copy from "copy-to-clipboard";
 import { toast } from "react-toastify";
 import { IoClose } from "react-icons/io5";
+import SpotlightButton from "../modules/Button";
+import Button from "../modules/Button";
 
 export default function Question({ setLoader }) {
   // The Place To Define Variables and States
@@ -11,7 +13,7 @@ export default function Question({ setLoader }) {
   const [response, setResponse] = useState("");
 
   // Function to Get Generated DATA
-  const generateHandler = async () => {
+  const getAnswerHandler = async () => {
     setLoader(true);
     if (text === "") {
       setResponse("");
@@ -80,13 +82,14 @@ export default function Question({ setLoader }) {
             </div>
 
             {/* ________________________________________________________ GENERATE BUTTON SECTION */}
-            <div className="flex w-ull m-2">
-              <button
+            <div className="flex justify-center w-ull m-2">
+              {/* <button
                 onClick={generateHandler}
                 className="w-full bg-black text-white font-semibold rounded-full p-1"
               >
                 send
-              </button>
+              </button> */}
+              <Button title="Get Answer" functionHandler={getAnswerHandler} />
             </div>
             {/* _____________________________________________________________ SHOW INPUT SECTION */}
             <div className="flex w-full justify-center items-center m-4">
