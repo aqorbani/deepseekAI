@@ -9,12 +9,13 @@ import loading from "../../public/lottie/loading.json";
 import Question from "../Question/Question";
 import About from "../About/About";
 import { TbMessageQuestion } from "react-icons/tb";
-import { HiPencilAlt } from "react-icons/hi";
+import { HiOutlinePencilSquare } from "react-icons/hi2";
 import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
 
 export default function Index({ navigateToPage }) {
   const router = useRouter();
-  const ref = useRef(0);
+  const redirect = useRef(0);
 
   // The Place To Define Variables and States
   const [loader, setLoader] = useState(false);
@@ -29,10 +30,10 @@ export default function Index({ navigateToPage }) {
       router.query.text &&
       router.query.ori &&
       router.query.des &&
-      ref.current === 0
+      redirect.current === 0
     ) {
       setBtnStatus("translate");
-      ref.current = ref.current + 1;
+      redirect.current = 1;
     }
   });
 
@@ -45,9 +46,9 @@ export default function Index({ navigateToPage }) {
       case "question":
         return <Question setLoader={setLoader} />;
       case "about":
-        return <About setLoader={setLoader} />;
+        return <About setBtnStatus={setBtnStatus} />;
       default:
-        return <About setLoader={setLoader} />;
+        return <About setBtnStatus={setBtnStatus} />;
     }
   };
 
@@ -108,7 +109,7 @@ export default function Index({ navigateToPage }) {
             onClick={() => setBtnStatus("write")}
             className={btnStatus === "write" ? active : disable}
           >
-            <HiPencilAlt className="text-[3vw] lg:text-[1.5vw]" />
+            <HiOutlinePencilSquare className="text-[3vw] lg:text-[1.5vw]" />
             <p className="font-semibold text-[2vw] lg:text-[1vw]">Write</p>
           </button>
 

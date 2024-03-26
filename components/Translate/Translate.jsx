@@ -49,7 +49,7 @@ export default function Main({ setLoader }) {
     const delayonChange = setTimeout(() => {
       autoDetectLanguage();
       translateHandler();
-    }, 1500);
+    }, 2000);
 
     return () => clearTimeout(delayonChange);
   }, [text, btnStatus, btnStatusRes]);

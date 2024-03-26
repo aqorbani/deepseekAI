@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GoCopy } from "react-icons/go";
 import copy from "copy-to-clipboard";
 import { toast } from "react-toastify";
 import { IoClose } from "react-icons/io5";
 import Button from "../modules/Button";
+import { useRouter } from "next/router";
 
 export default function Main({ setLoader }) {
+  const router = useRouter();
+
   // The Place To Define Variables and States
   const [text, setText] = useState("");
   const [lenght, setLength] = useState("auto");
@@ -28,6 +31,15 @@ export default function Main({ setLoader }) {
     ":\n ```text \n" +
     text +
     "\n```";
+
+  useEffect(() => {
+    if (router.query.text || router.query.ori || router.query.des) {
+      delete router.query.text;
+      delete router.query.ori;
+      delete router.query.des;
+      router.push(router);
+    }
+  });
 
   // Function to Get Generated DATA
   const generateHandler = async () => {
@@ -164,6 +176,7 @@ export default function Main({ setLoader }) {
               >
                 <option value="english">English</option>
                 <option value="persian">Persian</option>
+                <option value="german">German</option>
               </select>
             </div>
             {/* ________________________________________________________ GENERATE BUTTON SECTION */}

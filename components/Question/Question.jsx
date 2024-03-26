@@ -1,16 +1,26 @@
-import styles from "../../styles/Pages.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GoCopy } from "react-icons/go";
 import copy from "copy-to-clipboard";
 import { toast } from "react-toastify";
 import { IoClose } from "react-icons/io5";
-import SpotlightButton from "../modules/Button";
 import Button from "../modules/Button";
+import { useRouter } from "next/router";
 
 export default function Question({ setLoader }) {
+  const router = useRouter();
+
   // The Place To Define Variables and States
   const [text, setText] = useState("");
   const [response, setResponse] = useState("");
+
+  useEffect(() => {
+    if (router.query.text || router.query.ori || router.query.des) {
+      delete router.query.text;
+      delete router.query.ori;
+      delete router.query.des;
+      router.push(router);
+    }
+  });
 
   // Function to Get Generated DATA
   const getAnswerHandler = async () => {
