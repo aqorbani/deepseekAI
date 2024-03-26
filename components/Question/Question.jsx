@@ -6,7 +6,7 @@ import { IoClose } from "react-icons/io5";
 import Button from "../modules/Button";
 import { useRouter } from "next/router";
 
-export default function Question({ setLoader }) {
+export default function Question({ setLoader, redirect }) {
   const router = useRouter();
 
   // The Place To Define Variables and States
@@ -15,10 +15,12 @@ export default function Question({ setLoader }) {
 
   useEffect(() => {
     if (router.query.text || router.query.ori || router.query.des) {
-      delete router.query.text;
-      delete router.query.ori;
-      delete router.query.des;
-      router.push(router);
+      if (redirect.current != 0) {
+        delete router.query.text;
+        delete router.query.ori;
+        delete router.query.des;
+        router.push(router);
+      }
     }
   });
 

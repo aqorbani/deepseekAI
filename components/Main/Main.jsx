@@ -11,7 +11,6 @@ import About from "../About/About";
 import { TbMessageQuestion } from "react-icons/tb";
 import { HiOutlinePencilSquare } from "react-icons/hi2";
 import { useRouter } from "next/router";
-import { useSearchParams } from "next/navigation";
 
 export default function Index({ navigateToPage }) {
   const router = useRouter();
@@ -40,15 +39,15 @@ export default function Index({ navigateToPage }) {
   const switchComponents = (btnStatus) => {
     switch (btnStatus) {
       case "write":
-        return <Write setLoader={setLoader} />;
+        return <Write redirect={redirect} setLoader={setLoader} />;
       case "translate":
         return <Translate setLoader={setLoader} />;
       case "question":
-        return <Question setLoader={setLoader} />;
+        return <Question redirect={redirect} setLoader={setLoader} />;
       case "about":
-        return <About setBtnStatus={setBtnStatus} />;
+        return <About redirect={redirect} setBtnStatus={setBtnStatus} />;
       default:
-        return <About setBtnStatus={setBtnStatus} />;
+        return <About redirect={redirect} setBtnStatus={setBtnStatus} />;
     }
   };
 

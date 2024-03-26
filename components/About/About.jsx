@@ -4,15 +4,17 @@ import { BsTranslate } from "react-icons/bs";
 import { HiOutlinePencilSquare } from "react-icons/hi2";
 import { TbMessageQuestion } from "react-icons/tb";
 
-export default function About({ setBtnStatus }) {
+export default function About({ setBtnStatus, redirect }) {
   const router = useRouter();
 
   useEffect(() => {
     if (router.query.text || router.query.ori || router.query.des) {
-      delete router.query.text;
-      delete router.query.ori;
-      delete router.query.des;
-      router.push(router);
+      if (redirect.current != 0) {
+        delete router.query.text;
+        delete router.query.ori;
+        delete router.query.des;
+        router.push(router);
+      }
     }
   });
 
