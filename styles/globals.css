@@ -313,7 +313,7 @@ a {
   display: flex;
   justify-content: space-between;
   left: 0;
-  padding: 1rem;
+  padding-right: 1rem;
   top: 1rem;
   width: 100%;
 }

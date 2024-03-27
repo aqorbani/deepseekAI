@@ -124,7 +124,9 @@ export default function Question({ setLoader, redirect }) {
                 ></textarea> */}
                 {response && (
                   <section className="sectionContainer">
-                    <div class="typewriter monospace">{response}</div>
+                    <div class="typewriter no-caret text-justify">
+                      {response}
+                    </div>
                   </section>
                 )}
                 {/* {response != "" && (
