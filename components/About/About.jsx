@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { BsTranslate } from "react-icons/bs";
 import { HiOutlinePencilSquare } from "react-icons/hi2";
 import { TbMessageQuestion } from "react-icons/tb";
+import Image from "next/image";
 
 export default function About({ setBtnStatus, redirect }) {
   const router = useRouter();
@@ -21,6 +22,14 @@ export default function About({ setBtnStatus, redirect }) {
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center p-2 lg:p-20">
       <div className="w-full flex flex-col justify-center items-center text-center">
+        <Image
+          priority
+          src="/icons/logo.svg"
+          height={25}
+          width={25}
+          alt="PANA"
+          className="mt-20 w-10 h-10 md:w-20 md:h-20 "
+        />
         <h2 className="logo">PANA</h2>
         <h2 className="text-[2vw] md:text-[1.5vw] font-bold animate-fade-up animate-once animate-duration-[2000ms]">
           Hi, welcome my friend.
