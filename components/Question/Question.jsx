@@ -29,6 +29,7 @@ export default function Question({ setLoader, redirect }) {
   // Function to Get Generated DATA
   const getAnswerHandler = async () => {
     setLoader(true);
+    setResponse("");
     if (text === "") {
       setResponse("");
       setLoader(false);
@@ -99,26 +100,41 @@ export default function Question({ setLoader, redirect }) {
               <Button title="Get Answer" functionHandler={getAnswerHandler} />
             </div>
             {/* _____________________________________________________________ SHOW INPUT SECTION */}
-            <p className="text-black w-fit p-2 text-[2.2vw] md:text-[1vw] font-medium">
-              Answer :
-            </p>
+            {response != "" && (
+              <div className="flex">
+                <p className="text-black w-fit p-2 text-[2.2vw] md:text-[1vw] font-medium">
+                  Answer :
+                </p>
+                <div className="flex">
+                  <GoCopy
+                    onClick={() => copyHandler(response)}
+                    className="text-gray-400 hover:text-gray-800 cursor-pointer duration-300 m-3 text-lg"
+                  />
+                </div>
+              </div>
+            )}
             <div className="flex w-full justify-center items-center m-4">
               <div className="flex w-full">
-                <textarea
+                {/* <textarea
                   name="response"
                   value={response}
                   className={`m-0 p-2 rounded textarea-c`}
                   rows="20"
                   readOnly
-                ></textarea>
-                {response != "" && (
+                ></textarea> */}
+                {response && (
+                  <section className="sectionContainer">
+                    <div class="typewriter monospace">{response}</div>
+                  </section>
+                )}
+                {/* {response != "" && (
                   <div className="flex flex-col justify-center items-center m-3">
                     <GoCopy
                       onClick={() => copyHandler(response)}
                       className="text-gray-400 hover:text-gray-800 cursor-pointer duration-300 m-3 text-lg"
                     />
                   </div>
-                )}
+                )} */}
               </div>
             </div>
           </div>
