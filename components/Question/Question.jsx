@@ -39,7 +39,7 @@ export default function Question({ setLoader, redirect }) {
 
     try {
       const response = await axios(getAxiosConfig(text));
-      setResponse(JSON.stringify(response.data.choices[0].message.content));
+      setResponse(response.data.choices[0].message.content);
     } catch (error) {
       toast.info("No response is received from the server", {
         position: "top-center",

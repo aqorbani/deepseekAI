@@ -111,7 +111,7 @@ export default function Main({ setLoader }) {
 
     try {
       const response = await axios(getAxiosConfig(finalContent));
-      setResponse(JSON.stringify(response.data.choices[0].message.content));
+      setResponse(response.data.choices[0].message.content);
     } catch (error) {
       toast.info("No response is received from the server", {
         position: "top-center",
@@ -133,27 +133,25 @@ export default function Main({ setLoader }) {
     // Preparing Final Data to Language Detection
     const finalContent = await updatedContent("languageDetection");
 
-    const res = await fetch(process.env.DEEPSEEK, {
-      method: "POST",
-      body: JSON.stringify({
-        model: "deepseek-chat",
-        messages: [{ role: "user", content: finalContent }],
-      }),
-      headers: {
-        Authorization: "Bearer " + process.env.KEY,
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await res.json();
-    const clearedData = data.choices[0].message.content;
-    if (clearedData.includes("English")) {
-      setAutoDetect("English");
-    } else if (clearedData.includes("Persian")) {
-      setAutoDetect("Persian");
-    } else if (clearedData.includes("German")) {
-      setAutoDetect("German");
-    } else {
-      setAutoDetect("I have not been trained");
+    try {
+      const response = await axios(getAxiosConfig(finalContent));
+      const clearedData = response.data.choices[0].message.content;
+
+      if (clearedData?.includes("English")) {
+        setAutoDetect("English");
+      } else if (clearedData.includes("Persian")) {
+        setAutoDetect("Persian");
+      } else if (clearedData.includes("German")) {
+        setAutoDetect("German");
+      } else {
+        setAutoDetect("I have not been trained");
+      }
+    } catch (error) {
+      toast.info("No response is received from the server", {
+        position: "top-center",
+        hideProgressBar: true,
+        icon: false,
+      });
     }
   };
 
