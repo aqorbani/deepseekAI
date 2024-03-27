@@ -5,6 +5,8 @@ import { toast } from "react-toastify";
 import { IoClose } from "react-icons/io5";
 import Button from "../modules/Button";
 import { useRouter } from "next/router";
+import { getAxiosConfig } from "../../utils/getAxiosConfig";
+import axios from "axios";
 
 export default function Main({ setLoader, redirect }) {
   const router = useRouter();
@@ -51,19 +53,18 @@ export default function Main({ setLoader, redirect }) {
       setLoader(false);
       return;
     }
-    const res = await fetch(process.env.DEEPSEEK, {
-      method: "POST",
-      body: JSON.stringify({
-        model: "deepseek-chat",
-        messages: [{ role: "user", content: basicText }],
-      }),
-      headers: {
-        Authorization: "Bearer " + process.env.KEY,
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await res.json();
-    setResponse(data.choices[0].message.content);
+    // ____________________________________________________
+
+    try {
+      const response = await axios(getAxiosConfig(basicText));
+      setResponse(JSON.stringify(response.data.choices[0].message.content));
+    } catch (error) {
+      toast.info("No response is received from the server", {
+        position: "top-center",
+        hideProgressBar: true,
+        icon: false,
+      });
+    }
     setLoader(false);
   };
 

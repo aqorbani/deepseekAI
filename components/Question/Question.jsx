@@ -47,20 +47,6 @@ export default function Question({ setLoader, redirect }) {
       });
     }
     setLoader(false);
-    // ____________________________________________________
-    // const res = await fetch(process.env.DEEPSEEK, {
-    //   method: "POST",
-    //   body: JSON.stringify({
-    //     model: "deepseek-chat",
-    //     messages: [{ role: "user", content: text }],
-    //   }),
-    //   headers: {
-    //     Authorization: "Bearer " + process.env.KEY,
-    //     "Content-Type": "application/json",
-    //   },
-    // });
-    // const data = await res.json();
-    // setResponse(data.choices[0].message.content);
   };
 
   // copy to clipboard function

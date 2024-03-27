@@ -11,7 +11,8 @@ import { toast } from "react-toastify";
 import { TelegramShareButton } from "next-share";
 import { useRouter } from "next/router";
 import { getCurrentUrl } from "../../utils/getPath";
-import { usePathname } from "next/navigation";
+import axios from "axios";
+import { getAxiosConfig } from "../../utils/getAxiosConfig";
 
 export default function Main({ setLoader }) {
   const router = useRouter();
@@ -106,19 +107,18 @@ export default function Main({ setLoader }) {
     // Preparing Final Data to Search
     const finalContent = await updatedContent("translate");
 
-    const res = await fetch(process.env.DEEPSEEK, {
-      method: "POST",
-      body: JSON.stringify({
-        model: "deepseek-chat",
-        messages: [{ role: "user", content: finalContent }],
-      }),
-      headers: {
-        Authorization: "Bearer " + process.env.KEY,
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await res.json();
-    setResponse(data.choices[0].message.content);
+    // ____________________________________________________
+
+    try {
+      const response = await axios(getAxiosConfig(finalContent));
+      setResponse(JSON.stringify(response.data.choices[0].message.content));
+    } catch (error) {
+      toast.info("No response is received from the server", {
+        position: "top-center",
+        hideProgressBar: true,
+        icon: false,
+      });
+    }
     setLoader(false);
   };
 
