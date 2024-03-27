@@ -20,7 +20,7 @@ export const getAxiosConfig = (text) => {
     method: "post",
     maxBodyLength: Infinity,
     url: process.env.DEEPSEEK,
-    timeout: 15000,
+    timeout: 20000,
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
