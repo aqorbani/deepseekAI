@@ -19,6 +19,12 @@ a {
   box-sizing: border-box;
 }
 
+/* bg animate  */
+/* bg animate  */
+/* bg animate  */
+/* bg animate  */
+/* bg animate  */
+/* bg animate  */
 @-webkit-keyframes animatetop {
   from {
     top: -300px;
@@ -193,6 +199,9 @@ a {
 }
 
 /* SPLASH */
+/* SPLASH */
+/* SPLASH */
+/* SPLASH */
 /* HTML: <div class="loader"></div> */
 .loader {
   width: calc(6 * 30px);
@@ -218,6 +227,9 @@ a {
   }
 }
 
+/* Typing Effect */
+/* Typing Effect */
+/* Typing Effect */
 /* Typing Effect */
 @keyframes grow {
   0% {
