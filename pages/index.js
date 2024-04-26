@@ -11,5 +11,10 @@ export default function Home() {
 
     return () => clearTimeout(splashDelay);
   });
-  return <>{splash ? <Splash /> : <Main />}</>;
+  return (
+    <>
+      <title>PANA - AI assistant</title>
+      {splash ? <Splash /> : <Main />}
+    </>
+  );
 }
